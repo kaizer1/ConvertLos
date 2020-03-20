@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio/read_struct.cpp
+read_struct.h
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio/read_struct.h
+
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio/read_struct.h
+cstdio
+-
+cstdlib
+-
+cstring
+-
+

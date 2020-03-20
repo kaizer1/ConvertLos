@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/examp_cxx/c_fil/example_c.cpp
+example_c.h
+-
+stdio.h
+-
+

@@ -1,0 +1,9 @@
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/CMakeFiles/convertFBX_toLosMesh.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/CMakeFiles/rebuild_cache.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/CMakeFiles/edit_cache.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/CMakeFiles/fbxLos_common.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/CMakeFiles/rebuild_cache.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/CMakeFiles/edit_cache.dir
+/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/CMakeFiles/readStruct.dir

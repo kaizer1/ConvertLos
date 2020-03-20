@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="convertFBX_toLosMesh"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Another_cmake\;CMake Files\read_s\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="convertFBX_toLosMesh">
+				<Option output="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/convertFBX_toLosMesh" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/examp_cxx/incl"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/gltfLoaderFile"/>
+					<Add directory="/Applications/Autodesk/FBX_SDK/2017.1/include"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 convertFBX_toLosMesh"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="convertFBX_toLosMesh/fast">
+				<Option output="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/convertFBX_toLosMesh" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/examp_cxx/incl"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/gltfLoaderFile"/>
+					<Add directory="/Applications/Autodesk/FBX_SDK/2017.1/include"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 convertFBX_toLosMesh/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fbxLos_common">
+				<Option output="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/libfbxLos_common.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Autodesk/FBX_SDK/2017.1/include"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 fbxLos_common"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fbxLos_common/fast">
+				<Option output="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/libfbxLos_common.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Autodesk/FBX_SDK/2017.1/include"/>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 fbxLos_common/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/Another_cmake/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="readStruct">
+				<Option output="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/libreadStruct.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 readStruct"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="readStruct/fast">
+				<Option output="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/libreadStruct.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 readStruct/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/cmake-build-debug/read_s/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/files/fbx_common.cpp">
+			<Option target="fbxLos_common"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/include/fbx_common.h">
+			<Option target="fbxLos_common"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio/read_struct.cpp">
+			<Option target="readStruct"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/fio/read_struct.h">
+			<Option target="readStruct"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/src_losCon/losMain.cpp">
+			<Option target="convertFBX_toLosMesh"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Another_cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/Another_cmake/cmakeLos_fbx.txt">
+			<Option virtualFolder="CMake Files\Another_cmake\"/>
+		</Unit>
+		<Unit filename="/Users/sergeiloskutnikov/Desktop/Goodness/LosConvector/read_s/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\read_s\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

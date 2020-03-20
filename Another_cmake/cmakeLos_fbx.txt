@@ -1,0 +1,139 @@
+#
+#  Building function and FbxLibrary 
+#
+
+cmake_minimum_required(VERSION 3.4.1)
+ 
+
+
+###    macro  append_flags !
+
+# One helper macro used in set_common_build_variables()
+# macro(append_flags)
+#   append ${new_flags} into cur_flags IF flags are not inside cur_flags
+
+macro(append_flags cur_flags  new_flags)
+  if(NOT "${new_flags}" STREQUAL "")
+    string(FIND "${${cur_flags}}" "${new_flags}" position)
+    if(${position} EQUAL -1)
+      set(${cur_flags} "${${cur_flags}} ${new_flags}")
+    endif()
+  endif()
+endmacro(append_flags)
+
+### function fbx_compile_options
+
+function(fbx_compile_options)
+  # Grab the standard set of build variables.
+  
+  #set_common_build_variables()
+
+  # These warnings come from the FBX SDK, and they can't be suppressed
+  # by pragmas around #include <fbxsdk.h>, so suppress them here.
+  if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+    append_flags(CMAKE_CXX_FLAGS "-Wno-literal-suffix -Wno-comment")
+    string(REPLACE "-Wall" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    message("STATUS  is in cmake_Compile_IS ")
+    string(REPLACE "-pedantic" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    string(REPLACE "-Werror" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    string(REPLACE "-Wextra" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+  endif()
+
+  if(${CMAKE_CXX_COMPILER_ID} MATCHES "AppleClang")
+    append_flags(CMAKE_CXX_FLAGS "-Wno-literal-suffix -Wno-comment")
+    string(REPLACE "-Wall" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    message("STATUS is in cmake_Compile_IS  APPLE Clang")
+    string(REPLACE "-pedantic" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    string(REPLACE "-Werror" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    string(REPLACE "-Wextra" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+  endif()
+
+  # Needed by the FBX SDK when we call some file manipulation functions.
+  if(APPLE)
+    set(CMAKE_CXX_LINK_FLAGS "-framework Carbon")
+  endif()
+
+  # Statically link the C runtime .so files to make binary more portable.
+  if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+    set(CMAKE_CXX_LINK_FLAGS "-static")
+  endif()
+
+  # Set the compile and link flags in the calling scope.
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}" PARENT_SCOPE)
+  set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}" PARENT_SCOPE)
+  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}" PARENT_SCOPE)
+  set(CMAKE_C_FLAGS_DEFAULT "${CMAKE_C_FLAGS}" PARENT_SCOPE)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" PARENT_SCOPE)
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}" PARENT_SCOPE)
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}" PARENT_SCOPE)
+  set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS}" PARENT_SCOPE)
+  set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE}" PARENT_SCOPE)
+endfunction()
+
+
+### function fbx_configure_target
+
+function(fbx_configure_target target)
+  # Autodesk's FBX SDK must be installed to build the pipeline.
+
+  #set(fbx_sdk_dir $ENV{FBX_SDK})
+
+  set(fbx_sdk_dir "/Applications/Autodesk/FBX_SDK/2017.1")
+  if("${fbx_sdk_dir}" STREQUAL "")
+    message(FATAL_ERROR "The FBX SDK must be installed and the FBX_SDK environment variable must be set to the SDK directory.")
+  endif()
+
+  # Get the directory with the FBX SDK library.  # was CMAKE_CXX_COMPILER_ID
+  if(${CMAKE_CXX_COMPILER_ID} STREQUAL AppleClang)            
+    set(fbx_sdk_lib_dir "${fbx_sdk_dir}/lib/clang")
+    message(STATUS " this and all ok ! ")
+  else()
+    message(FATAL_ERROR "The FBX SDK library subdirectory is unknown for your compiler.")
+  endif()
+
+  # Prefer the static library '.a' over the sharedlibrary '.so'.
+  find_library(fbx_sdk_lib_release
+    NAMES libfbxsdk.a fbxsdk libfbxsdk-mt.lib
+    PATHS ${fbx_sdk_lib_dir}/release)
+
+  find_library(fbx_sdk_lib_debug
+    NAMES libfbxsdk.a fbxsdk libfbxsdk-mt.lib
+    PATHS ${fbx_sdk_lib_dir}/debug)
+
+  set(fbx_sdk_lib debug ${fbx_sdk_lib_debug} optimized ${fbx_sdk_lib_release})
+
+  if(NOT fbx_sdk_lib)
+    message(FATAL_ERROR "Cannot find the FBX SDK library. For your compiler, it should be in ${fbx_sdk_lib_dir}.")
+  endif()
+
+  # Linux and Mac require these libs too.
+  if(NOT MSVC)
+    set(fbx_sdk_extra_libs pthread dl)
+  endif()
+
+  # Don't link fbx_common to itself.
+  if(NOT ${target} STREQUAL "fbxLos_common")
+  message(STATUS "in fbxLos_common! ")
+    set(fbx_common_library "fbxLos_common")
+    set(los_clib "readStruct")
+    #was fbxLos_common 
+  endif()
+
+
+
+  # Add the location of #include <fbxsdk.h>.
+  target_include_directories(${target} PRIVATE
+      ${fbx_sdk_dir}/include
+      ${cur_dir}/Another_cmake/include)
+
+      #was Another_cmake/include
+
+  # Link the executable with the FBX SDK and the static libraries that the
+  # FBX SDK needs.
+  target_link_libraries(${target}
+                        ${fbx_sdk_lib}
+                        ${fbx_sdk_extra_libs}
+                        ${fbx_common_library}
+                        #${los_clib}
+                        )
+endfunction()
