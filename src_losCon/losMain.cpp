@@ -32,8 +32,8 @@ const int UV_STRIDE = 2;
 // asdklhfkjasdhfkjasdhfjk
 typedef std::unordered_map<const FbxNode*, unsigned int> NodeToBoneMap;
 
-sd
-forsadflkasjdfl;kasjhdlkf jalksdjflk ;asjdlk;fjal;sdhjfkjlqweh 
+
+// branck workLast
 
    // struct SubMesh
    //  {
