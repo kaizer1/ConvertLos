@@ -1423,6 +1423,7 @@ bool InitializeFbxMesh(const FbxMesh *pMesh, LosBestMesh *meshL)
 }
 
 
+// animation branch !!! 
 
  // ***********  BINormal 
    for(int t = 0; t < pMesh->GetElementBinormalCount(); t++)
