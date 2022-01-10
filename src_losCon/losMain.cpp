@@ -28,9 +28,12 @@ const int UV_STRIDE = 2;
 #define TRIANGLE_VERTEX_COUNT 3
 
 
+// sdlkfjasjkldjflkasdjfas
+// asdklhfkjasdhfkjasdhfjk
 typedef std::unordered_map<const FbxNode*, unsigned int> NodeToBoneMap;
 
-
+sd
+forsadflkasjdfl;kasjhdlkf jalksdjflk ;asjdlk;fjal;sdhjfkjlqweh 
 
    // struct SubMesh
    //  {
