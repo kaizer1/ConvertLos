@@ -1894,7 +1894,7 @@ printf(" we are thw !3232  099\n");
 
 
 
-     std::string filename = "/Users/sergeiloskutnikov/Desktop/TestArray2.bin";
+     std::string filename = "TestArray2.bin";
         std::ofstream losStream(filename, std::ios::binary);
 
 //  vertex Size unsigned int 
