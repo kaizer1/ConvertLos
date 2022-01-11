@@ -1,7 +1,4 @@
-/*
-* Loskutnikov Convertor 2017 
-*
- */
+// 2022 Loskutnikov Games Inc.   
 
 #include <string>
 #include <cstdlib>

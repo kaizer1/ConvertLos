@@ -1,12 +1,7 @@
 #
 #  Building function and FbxLibrary 
-#
 
-cmake_minimum_required(VERSION 3.4.1)
- 
-
-
-###    macro  append_flags !
+cmake_minimum_required(VERSION 3.10.1)
 
 # One helper macro used in set_common_build_variables()
 # macro(append_flags)

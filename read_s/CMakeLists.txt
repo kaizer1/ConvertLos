@@ -1,8 +1,4 @@
-# Copyright 2017 LoskutnikovGames Inc. All rights reserved.
-#
-#
-#  add_readStruct 
-#
+# Copyright 2022 LoskutnikovGames Inc. All rights reserved.
 
 cmake_minimum_required(VERSION 3.4.1)
 
