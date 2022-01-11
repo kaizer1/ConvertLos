@@ -10,7 +10,13 @@ set(Los_Convert_FILES
 )
 
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -stdlib=libc++")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Werror -Wextra")
+  #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Werror  -Wextra")
+
+if (MSVC)
+    add_compile_options(/W4 /MDd) # was /WX
+else()
+    add_compile_options(-Wall -Wextra -pedantic -Werror)
+endif()
 
  
   if(CMAKE_COMPILER_IS_GNUCC OR APPLE)
@@ -27,8 +33,7 @@ if(${CMAKE_CXX_COMPILER_ID} MATCHES "AppleClang")
   endif()
 endif()
 
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char")
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char")
 set(cur_dir ${CMAKE_CURRENT_SOURCE_DIR})
 message (STATUS " my directory = " ${cur_dir})
 

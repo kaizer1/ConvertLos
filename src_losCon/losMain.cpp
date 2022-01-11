@@ -1265,7 +1265,7 @@ bool InitializeFbxMesh(const FbxMesh *pMesh, LosBestMesh *meshL)
         lMaterialMappingMode = pMesh->GetElementMaterial()->GetMappingMode();
         if (lMaterialIndice && lMaterialMappingMode == FbxGeometryElement::eByPolygon)
         {
-            FBX_ASSERT(lMaterialIndice->GetCount() == lPolygonCount);
+            FBX_ASSERT(lMaterialIndice->GetCount() == losCountAll);
             if (lMaterialIndice->GetCount() == losCountAll)
             {
                 // Count the faces of each material
@@ -1301,7 +1301,7 @@ bool InitializeFbxMesh(const FbxMesh *pMesh, LosBestMesh *meshL)
                     // This will be used as counter in the following procedures, reset to zero
                     mSubMeshes[lIndex]->TriangleCount = 0;
                 }
-                FBX_ASSERT(lOffset == lPolygonCount * 3);
+                FBX_ASSERT(lOffset == losCountAll * 3);
             }
         }
     }

@@ -12,6 +12,6 @@ set(fbxLos_common_SRCS
     files/fbx_common.cpp)
 
 add_library(fbxLos_common ${fbxLos_common_SRCS})
-message("STATUS >    ${CMAKE_CXX_COMPILER_ID}")
+message(STATUS   ${CMAKE_CXX_COMPILER_ID})
 fbx_configure_target(fbxLos_common)
 

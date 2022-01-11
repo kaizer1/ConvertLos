@@ -48,7 +48,6 @@ function(fbx_compile_options)
     set(CMAKE_CXX_LINK_FLAGS "-framework Carbon")
   endif()
 
-  # Statically link the C runtime .so files to make binary more portable.
   if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
     set(CMAKE_CXX_LINK_FLAGS "-static")
   endif()
@@ -65,34 +64,33 @@ function(fbx_compile_options)
   set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE}" PARENT_SCOPE)
 endfunction()
 
-
-### function fbx_configure_target
-
 function(fbx_configure_target target)
-  # Autodesk's FBX SDK must be installed to build the pipeline.
 
-  #set(fbx_sdk_dir $ENV{FBX_SDK})
-
-  set(fbx_sdk_dir "/Applications/Autodesk/FBX_SDK/2017.1")
+  # apple = /Applications/Autodesk/FBX_SDK/2017.1   windows = 
+  set(fbx_sdk_dir "C:/Program Files/Autodesk/FBX/FBX SDK/2020.2.1")
   if("${fbx_sdk_dir}" STREQUAL "")
     message(FATAL_ERROR "The FBX SDK must be installed and the FBX_SDK environment variable must be set to the SDK directory.")
   endif()
+   
+    message(STATUS " my sdk dir == " ${fbx_sdk_dir})
 
-  # Get the directory with the FBX SDK library.  # was CMAKE_CXX_COMPILER_ID
   if(${CMAKE_CXX_COMPILER_ID} STREQUAL AppleClang)            
     set(fbx_sdk_lib_dir "${fbx_sdk_dir}/lib/clang")
-    message(STATUS " this and all ok ! ")
+    message(STATUS " this and apple Clang! ")
+  elseif(${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
+       set(fbx_sdk_lib_dir "${fbx_sdk_dir}/lib/vs2019/x64")
+       message(STATUS " this and windows library on ")
   else()
     message(FATAL_ERROR "The FBX SDK library subdirectory is unknown for your compiler.")
   endif()
 
-  # Prefer the static library '.a' over the sharedlibrary '.so'.
+
   find_library(fbx_sdk_lib_release
-    NAMES libfbxsdk.a fbxsdk libfbxsdk-mt.lib
+    NAMES libfbxsdk-md.lib
     PATHS ${fbx_sdk_lib_dir}/release)
 
   find_library(fbx_sdk_lib_debug
-    NAMES libfbxsdk.a fbxsdk libfbxsdk-mt.lib
+    NAMES libfbxsdk-md.lib
     PATHS ${fbx_sdk_lib_dir}/debug)
 
   set(fbx_sdk_lib debug ${fbx_sdk_lib_debug} optimized ${fbx_sdk_lib_release})
@@ -101,18 +99,52 @@ function(fbx_configure_target target)
     message(FATAL_ERROR "Cannot find the FBX SDK library. For your compiler, it should be in ${fbx_sdk_lib_dir}.")
   endif()
 
-  # Linux and Mac require these libs too.
+
+
+
+   find_library(xml_lib_release
+    NAMES libxml2-md.lib
+    PATHS ${fbx_sdk_lib_dir}/release)
+
+  find_library(xml_lib_debug
+    NAMES libxml2-md.lib
+    PATHS ${fbx_sdk_lib_dir}/debug)
+
+  set(xml_lib debug ${xml_lib_debug} optimized ${xml_lib_release})
+
+  if(NOT xml_lib)
+    message(FATAL_ERROR "Cannot find the FBX SDK libxml2-mt.lib library. For your compiler, it should be in ${fbx_sdk_lib_dir}.")
+  endif()
+
+
+
+   find_library(z_lib_release
+    NAMES zlib-md.lib
+    PATHS ${fbx_sdk_lib_dir}/release)
+
+  find_library(z_lib_debug
+    NAMES zlib-md.lib
+    PATHS ${fbx_sdk_lib_dir}/debug)
+
+  set(z_lib debug ${z_lib_debug} optimized ${z_lib_release})
+
+  if(NOT z_lib)
+    message(FATAL_ERROR "Cannot find the FBX SDK zlib-mt.lib library. For your compiler, it should be in ${fbx_sdk_lib_dir}.")
+  endif()
+
   if(NOT MSVC)
     set(fbx_sdk_extra_libs pthread dl)
   endif()
 
-  # Don't link fbx_common to itself.
+
+
   if(NOT ${target} STREQUAL "fbxLos_common")
   message(STATUS "in fbxLos_common! ")
     set(fbx_common_library "fbxLos_common")
     set(los_clib "readStruct")
     #was fbxLos_common 
   endif()
+
 
 
 
@@ -123,10 +155,11 @@ function(fbx_configure_target target)
 
       #was Another_cmake/include
 
-  # Link the executable with the FBX SDK and the static libraries that the
-  # FBX SDK needs.
+
   target_link_libraries(${target}
                         ${fbx_sdk_lib}
+                        ${xml_lib}
+                        #{z_lib}
                         ${fbx_sdk_extra_libs}
                         ${fbx_common_library}
                         #${los_clib}
