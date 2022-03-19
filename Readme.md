@@ -2,7 +2,7 @@
 
 
 
- Simple program to convert .fbx, obj, gltf model to .lmf ( los mesh format ) 
+ Simple program to convert .fbx, .obj, .gltf model to .lmf ( los mesh format ) 
 
 
 
