@@ -32,8 +32,8 @@ const int UV_STRIDE = 2;
 // asdklhfkjasdhfkjasdhfjk
 typedef std::unordered_map<const FbxNode*, unsigned int> NodeToBoneMap;
 
-sd
-forsadflkasjdfl;kasjhdlkf jalksdjflk ;asjdlk;fjal;sdhjfkjlqweh 
+
+// branck workLast
 
    // struct SubMesh
    //  {
@@ -1423,6 +1423,7 @@ bool InitializeFbxMesh(const FbxMesh *pMesh, LosBestMesh *meshL)
 }
 
 
+// animation branch !!! 
 
  // ***********  BINormal 
    for(int t = 0; t < pMesh->GetElementBinormalCount(); t++)
@@ -1893,7 +1894,7 @@ printf(" we are thw !3232  099\n");
 
 
 
-     std::string filename = "/Users/sergeiloskutnikov/Desktop/TestArray2.bin";
+     std::string filename = "TestArray2.bin";
         std::ofstream losStream(filename, std::ios::binary);
 
 //  vertex Size unsigned int 
